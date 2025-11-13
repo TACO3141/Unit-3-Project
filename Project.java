@@ -1,4 +1,4 @@
-import java.lang.Scanner;
+import java.util.Scanner;
 
 class Project
 {
@@ -8,12 +8,32 @@ class Project
     System.out.println("What is your name?");
     String name = scan.nextLine();
     System.out.println("Hello " + name + "! Are you ready to crack the code?");
-    String answer = scan.nextLine();
-    if (!(answer.toUpperCase() == "Y" || answer.toUpperCase() == "YES"))
+    String answerString = scan.nextLine();
+    int answerInt = 0;
+    if (!(answerString.toUpperCase() == "Y" || answerString.toUpperCase() == "YES"))
     {
       System.exit(0);
     }
     
-    System.out.println("Alright " + name + ", here is your first hint:\n\nint count = 0;\nString[] arr = {\"First\", \"Second\", \"Third\", \"Fourth\", \"Fifth\"};\nfor (String n : arr){\n\t")
-  }
+    
+    System.out.println("\n\nAlright " + name + ", here is your first hint:\n\nString output = \"\";\nString[] arr = {\"First\", \"Second\", \"Third\", \"Fourth\", \"Fifth\"};\nfor (String n : arr){\n\toutput = output + n.substring(0, 2);\n}\nSystem.out.println(output);\n\nWhat is printed?");
+    //output should be FiSeThFoFi
+    answerString = scan.nextLine();
+    if (answerString == "FiSeThFoFi")
+    {
+      System.out.println("You passed! Moving on...\n\n");
+      System.out.println("Second hint:\n\nFictional Dystopian dictatorship where your every move is being watched");
+      answerInt = scan.nextInt();
+      if (answerInt == 1984)
+      {
+        System.out.println("You passed the second gate! Finally..\n\n");
+        System.out.println("Third hint:\n\n+%2");
+        answerInt = scan.nextInt();
+        if (answerInt > 0 && answerInt % 2 == 0)
+        {
+          System.out.println("You cracked the code!! Good job!");
+        }
+      }
+    }
+  } 
 }
