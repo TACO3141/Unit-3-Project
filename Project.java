@@ -10,7 +10,7 @@ class Project
     System.out.println("Hello " + name + "! Are you ready to crack the code?");
     String answerString = scan.nextLine();
     int answerInt = 0;
-    if (!(answerString.toUpperCase() == "Y" || answerString.toUpperCase() == "YES"))
+    if (!(answerString.toUpperCase().equals("Y") || answerString.toUpperCase().equals("YES")))
     {
       System.exit(0);
     }
@@ -19,7 +19,7 @@ class Project
     System.out.println("\n\nAlright " + name + ", here is your first hint:\n\nString output = \"\";\nString[] arr = {\"First\", \"Second\", \"Third\", \"Fourth\", \"Fifth\"};\nfor (String n : arr){\n\toutput = output + n.substring(0, 2);\n}\nSystem.out.println(output);\n\nWhat is printed?");
     //output should be FiSeThFoFi
     answerString = scan.nextLine();
-    if (answerString == "FiSeThFoFi")
+    if (answerString.equals("FiSeThFoFi"))
     {
       System.out.println("You passed! Moving on...\n\n");
       System.out.println("Second hint:\n\nFictional Dystopian dictatorship where your every move is being watched");
