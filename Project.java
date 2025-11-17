@@ -33,7 +33,19 @@ class Project
         {
           System.out.println("You cracked the code!! Good job!");
         }
+        else
+        {
+          System.out.println("Sorry, that's incorrect.\nBetter luck next time!");
+        }
       }
+      else
+      {
+        System.out.println("Sorry, that's incorrect.\nBetter luck next time!");
+      }
+    }
+    else
+    {
+      System.out.println("Sorry, that's incorrect.\nBetter luck next time!");
     }
   } 
 }
